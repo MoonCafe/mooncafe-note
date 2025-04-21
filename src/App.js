@@ -18,21 +18,18 @@ function App() {
   return (
     <div className="p-4 max-w-3xl mx-auto">
       <h1 className="text-2xl font-bold text-center mb-4">달다방의 개인 패치노트 확인</h1>
-
       <textarea
         className="w-full h-60 p-3 border rounded text-base"
         placeholder="여기에 패치노트를 붙여넣으세요..."
         value={input}
         onChange={(e) => setInput(e.target.value)}
       />
-
       <button
         onClick={handleSummarize}
         className="mt-4 px-6 py-2 rounded bg-indigo-600 text-white hover:bg-indigo-700"
       >
         요약하기
       </button>
-
       {summary && (
         <div className="mt-6 space-y-4">
           <Section title="🛠️ 오류 수정" color="text-red-500" items={summary.bugFixes} />
